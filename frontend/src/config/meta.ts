@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

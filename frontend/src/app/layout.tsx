@@ -1,13 +1,14 @@
-import { robotoMono } from "@/config/fonts";
-import { metadata } from "@/config/meta";
-import "./globals.css";
+import { robotoMono } from '@/config/fonts'
+import { metadata } from '@/config/meta'
+
+import '@/assets/styles/globals.css'
 
 export const metaData = metadata
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
@@ -17,5 +18,5 @@ export default function RootLayout({
         {children}
       </body>
     </html>
-  );
+  )
 }

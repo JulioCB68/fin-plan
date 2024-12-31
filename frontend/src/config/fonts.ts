@@ -1,7 +1,7 @@
-import { Roboto_Mono } from "next/font/google";
-import "./globals.css";
+/* eslint-disable prettier/prettier */
+import { Roboto_Mono as RobotoMonoFont } from "next/font/google";
 
-export const robotoMono = Roboto_Mono({
+export const robotoMono = RobotoMonoFont({
   variable: "--font-roboto-mono",
   subsets: ["latin"],
 });
