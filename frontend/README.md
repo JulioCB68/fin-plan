@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FINCHECK
 
-## Getting Started
+<p align="center">
+  Fincheck is an application designed for personal finance management. It allows you to create Bank Accounts, Transactions, and Categories to efficiently track your income and expenses.
+  <img src="https://imgur.com/a/CUklXui" alt="Presentation" />
+</p>
 
-First, run the development server:
+## Technologies Used
+
+<img src="https://skillicons.dev/icons?i=html,css,javascript,typescript,docker,git,prisma,nodejs,nestjs,react,vite,tailwindcss" width="415px" alt="Technologies" />
+
+The design is available on [Figma](https://www.figma.com/file/RRBEBWgyQZbEYPQhzOc1OQ/Fincheck).
+
+## Running the App (Back End)
+
+- First, clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/JulioCB68/fin-plan.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Navigate to the `/api` folder.
+- Install the dependencies (you can use yarn or any other package manager you prefer):
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Configure the `.env` variables (refer to `.env.example` for guidance).
 
-## Learn More
+- Start PostgreSQL with Docker:
 
-To learn more about Next.js, take a look at the following resources:
+You can run the database locally using a [Docker Container](https://www.docker.com/resources/what-container/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Refer to the official documentation to install the [Docker Engine](https://docs.docker.com/engine/install/ubuntu/).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+docker run --name pg -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres
+```
 
-## Deploy on Vercel
+- Run the migrations:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+npx prisma migrate dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Running the App (Front End)
+
+- Ensure you are in the `/frontend` folder.
+- Install the dependencies:
+
+```bash
+yarn
+```
+
+- Configure the `.env` variables (refer to `.env.example` for guidance).
