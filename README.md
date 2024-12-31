@@ -1,4 +1,4 @@
-# FINCHECK
+# FIN PLAN
 
 <p align="center">
   FinPlan is an application designed for personal finance management. It allows you to create Bank Accounts, Transactions, and Categories to efficiently track your income and expenses.
