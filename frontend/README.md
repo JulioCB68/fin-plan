@@ -1,8 +1,8 @@
 # FINCHECK
 
 <p align="center">
-  Fincheck is an application designed for personal finance management. It allows you to create Bank Accounts, Transactions, and Categories to efficiently track your income and expenses.
-  <img src="https://imgur.com/a/CUklXui" alt="Presentation" />
+  FinPlan is an application designed for personal finance management. It allows you to create Bank Accounts, Transactions, and Categories to efficiently track your income and expenses.
+  <img src="/frontend/public/Capa.png" alt="Presentation" />
 </p>
 
 ## Technologies Used
