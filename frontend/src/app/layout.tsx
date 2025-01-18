@@ -1,5 +1,7 @@
+import { Toaster } from '@/components/ui/sonner'
 import { robotoMono } from '@/config/fonts'
 import { metadata } from '@/config/meta'
+import QueryClientProvider from '@/providers/query-client-provider'
 
 import '@/assets/styles/globals.css'
 
@@ -15,7 +17,8 @@ export default function RootLayout({
       <body
         className={`${robotoMono.variable} ${robotoMono.variable} antialiased`}
       >
-        {children}
+        <QueryClientProvider>{children}</QueryClientProvider>
+        <Toaster richColors />
       </body>
     </html>
   )

@@ -1,4 +1,5 @@
 import { PrismaClient } from "@prisma/client";
+import bcrypt from "bcryptjs"; // Importa bcryptjs
 import { FastifyReply, FastifyRequest } from "fastify";
 
 const prisma = new PrismaClient();
@@ -14,15 +15,22 @@ export const createUser = async (
   };
 
   try {
+    // Encripta a senha
+    const hashedPassword = await bcrypt.hash(password, 10); // 10 é o custo de processamento (salt rounds)
+
     const user = await prisma.user.create({
       data: {
         name,
         email,
-        password,
+        password: hashedPassword, // Salva a senha encriptada
       },
     });
 
-    reply.status(201).send(user);
+    reply.status(201).send({
+      id: user.id,
+      name: user.name,
+      email: user.email,
+    });
   } catch (error) {
     reply.status(500).send({ error: "Error creating user" });
   }
